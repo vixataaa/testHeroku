@@ -1,0 +1,42 @@
+{
+    "hotels": [
+        {
+            "name": "Hotel 1"
+        },
+        {
+            "name": "Hotel 2"
+        },
+        {
+            "name": "Hotel 3"
+        },
+        {
+            "name": "Hotel 4"
+        },
+        {
+            "name": "Hotel 5"
+        },
+        {
+            "name": "Hotel 6"
+        }
+    ],
+    "guesthouses": [
+        {
+            "name": "Guesthouse 1"
+        },
+        {
+            "name": "Guesthouse 2"
+        },
+        {
+            "name": "Guesthouse 3"
+        },
+        {
+            "name": "Guesthouse 4"
+        },
+        {
+            "name": "Guesthouse 5"
+        },
+        {
+            "name": "Guesthouse 6"
+        }
+    ]
+}
