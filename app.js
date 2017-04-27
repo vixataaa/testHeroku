@@ -2,6 +2,8 @@ var express = require('express');
 var low = require('lowdb');
 var bodyParser = require('body-parser');
 
+app.set('port', (process.env.PORT || 5000));
+
 var app = express();
 var db = low('data/objects.json');
 
