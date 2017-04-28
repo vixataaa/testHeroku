@@ -1,9 +1,10 @@
 var express = require('express');
-var low = require('lowdb');
-var bodyParser = require('body-parser');
+// var low = require('lowdb');
+// var bodyParser = require('body-parser');
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
+
 app.use(express.static(__dirname + '/public'));
 
 
@@ -25,6 +26,6 @@ app.use(express.static(__dirname + '/public'));
 //     res.send('It works');
 // });
 
-app.listen(port, function() {
-    console.log('Server is running on http://127.0.0.1:' + port);
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
