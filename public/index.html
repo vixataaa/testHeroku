@@ -6,16 +6,13 @@
 </head>
 
 <body>
-    <button id="display-btn">Display all hotels</button><br>
-    <input id="name-field" placeholder="Hotel name"></input>
-    <button id="add-btn">Add</button><br>
-    <input type="text" id="search-field" placeholder="Search">
-    <button id="search-btn">Add</button><br>    
-
-    <div id="container">Hello</div>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <div id="app-container">Hello world!</div>
+    
     <script src="libs/systemjs/dist/system.js"></script>
-    <script src="./js/app.js"></script>
+    <script src="./js/system-config.js"></script>
+    <script>
+        System.import('app');
+    </script>
 </body>
 
 </html>

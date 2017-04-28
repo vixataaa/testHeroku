@@ -16,7 +16,9 @@
     "lowdb": "^0.16.2",
     "systemjs": "^0.20.12",
     "systemjs-plugin-babel": "0.0.21",
-    "underscore-db": "^0.12.2"
+    "underscore-db": "^0.12.2",
+    "handlebars": "^4.0.6",
+    "jquery": "^3.2.1"
   },
   "engines": {
     "node": "7.9.0"

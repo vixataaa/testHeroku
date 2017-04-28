@@ -1,9 +1,10 @@
 var express = require('express');
 
-// TODO: fix formatting
+// TODO: fix formatting, get separate functions for validating, finding etc.
 
 module.exports = function (db) {
     var router = express.Router();
+    var DEFAULT_PAGE_SIZE = 5;
 
     // Get all hotels
     router.get('/', function (req, res) {
@@ -14,25 +15,28 @@ module.exports = function (db) {
             .value();
 
         res.json(resultHotels);
-
     });
 
     // Get hotels by page
     router.get('/:pageNumber', function (req, res) {
-        const pageSize = 5 || req.pageSize;
+        const pageSize = DEFAULT_PAGE_SIZE || req.pageSize;
         const pageNumber = req.params.pageNumber;
         const hotelsDB = db.get('hotels');
 
+        // Page content would exceed the number of items
         if (pageSize * pageNumber - pageSize > hotelsDB.size()) {
             res.status(400)
                 .json("No hotels on this page");
             return;
         }
 
+        const startingIndex = pageNumber * pageSize - pageSize;
+        const endingIndex = pageNumber * pageSize;
+
         // Sort hotels by name and get by indices based on page selected
         const resultHotels = hotelsDB.chain()
             .sortBy('name')
-            .slice(pageNumber * pageSize - pageSize, pageNumber * pageSize)
+            .slice(startingIndex, endingIndex)
             .value();
 
         res.json(resultHotels);
@@ -54,6 +58,8 @@ module.exports = function (db) {
         db.get('hotels')
             .insert(hotelToAdd)
             .write();
+
+        res.json("Succesfully added!");
     });
 
     // Get specific hotel
@@ -89,7 +95,7 @@ module.exports = function (db) {
         }
 
         foundHotel.assign(searchedHotel).write();
-        res.json("Edited.");
+        res.json("Successfully edited.");
     });
 
     return router;
