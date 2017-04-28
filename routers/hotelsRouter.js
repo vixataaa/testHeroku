@@ -1,5 +1,7 @@
 var express = require('express');
 
+// TODO: fix formatting
+
 module.exports = function (db) {
     var router = express.Router();
 
@@ -87,6 +89,7 @@ module.exports = function (db) {
         }
 
         foundHotel.assign(searchedHotel).write();
+        res.json("Edited.");
     });
 
     return router;
