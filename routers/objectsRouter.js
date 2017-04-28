@@ -7,5 +7,9 @@ module.exports = function (db) {
         res.send(db);
     });
 
+    router.get('hotels/:id', function(req, res) {
+        res.send(db.get('hotels').find({ 'name' : `Hotel ${req.params.id}`}))
+    });
+
     return router;
 };
