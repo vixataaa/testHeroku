@@ -8,7 +8,7 @@ app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
 
-var db = low('data/objects.json');
+var db = low(__dirname + '/data/objects.json');
 
 db._.mixin(require('underscore-db'));
 
