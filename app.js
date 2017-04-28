@@ -15,15 +15,10 @@ db._.mixin(require('underscore-db'));
 app.use(bodyParser.json());
 // // app.use('/libs', express.static(__dirname + '/node_modules'));
 
-var objectsRouter = require(__dirname + '/routers/objectsRouter')(db);
-app.use('/objects', objectsRouter);
+var hotelsRouter = require(__dirname + '/routers/hotelsRouter')(db);
+app.use('/hotels', hotelsRouter);
 
 
-// var port = process.env.port || 3013;
-
-// app.get('', function(req, res) {
-//     res.send('It works');
-// });
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
