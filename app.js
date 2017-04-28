@@ -1,6 +1,6 @@
 var express = require('express');
-// var low = require('lowdb');
-// var bodyParser = require('body-parser');
+var low = require('lowdb');
+var bodyParser = require('body-parser');
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
