@@ -8,16 +8,15 @@ app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
 
-// var app = express();
-// var db = low('data/objects.json');
+var db = low('data/objects.json');
 
-// db._.mixin(require('underscore-db'));
+db._.mixin(require('underscore-db'));
 
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 // // app.use('/libs', express.static(__dirname + '/node_modules'));
 
-// var objectsRouter = require('./routers/objectsRouter')(db);
-// app.use('/objects', objectsRouter);
+var objectsRouter = require(__dirname + '/routers/objectsRouter')(db);
+app.use('/objects', objectsRouter);
 
 
 // var port = process.env.port || 3013;
