@@ -1,101 +1,191 @@
 {
-  "hotels": [
-    {
-      "name": "Hotel a",
-      "price": 42,
-      "somethingNooneHas": "WOW",
-      "someAsd": 69
+  "hotels": [{
+      "name": "Hotel 1",
+      "description": "I am described",
+      "image": "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg"
     },
     {
-      "name": "Hotel b"
+      "name": "Hotel 2",
+      "description": "I am described",
+      "image": "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg"
     },
     {
-      "name": "Hotel c"
+      "name": "Hotel 3",
+      "description": "I am described",
+      "image": "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg"
     },
     {
-      "name": "Hotel d"
+      "name": "Hotel 4",
+      "description": "I am described",
+      "image": "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg"
     },
     {
-      "name": "Hotel e"
+      "name": "Hotel 5",
+      "description": "I am described",
+      "image": "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg"
     },
     {
-      "name": "Hotel f"
+      "name": "Hotel 6",
+      "description": "I am described",
+      "image": "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg"
     },
     {
-      "name": "Hotel g"
+      "name": "Hotel 7",
+      "description": "I am described",
+      "image": "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg"
     },
     {
-      "name": "Hotel z"
+      "name": "Hotel 123",
+      "description": "I am described",
+      "image": "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg"
     },
     {
-      "name": "Hotel y"
+      "name": "Hotel 555",
+      "description": "I am described",
+      "image": "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg"
     },
     {
-      "name": "Hotel k"
+      "name": "Hotel 234",
+      "description": "I am described",
+      "image": "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg"
     },
     {
-      "name": "Hotel l"
+      "name": "Hotel wqe",
+      "description": "I am described",
+      "image": "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg"
     },
     {
-      "name": "Hotel l"
+      "name": "Hotel trhdfg",
+      "description": "I am described",
+      "image": "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg"
     },
     {
-      "name": "Hotel p"
+      "name": "Hotel hrehehr",
+      "description": "I am described",
+      "image": "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg"
     },
     {
-      "name": "Hotel 1"
+      "name": "Hotel gggg",
+      "description": "I am described",
+      "image": "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg"
     },
     {
-      "name": "Hotel 3"
-    },
-    {
-      "name": "Hotel 2"
-    },
-    {
-      "name": "Hotel 4"
-    },
-    {
-      "name": "Hotel 4"
-    },
-    {
-      "name": "Added from post!!",
-      "id": "646795d4-a2b6-4f74-8130-bf52df933aa6"
-    },
-    {
-      "name": "Added from post!!",
-      "id": "eb3862ce-de71-4209-a0fe-988a1ce022db"
-    },
-    {
-      "name": "1234",
-      "id": "dac97b6c-c1f9-461e-9c3e-ec57a5c5fd85"
-    },
-    {
-      "name": "GGWP",
-      "id": "c0588802-3c47-4522-8408-a909d998c0a5"
-    },
-    {
-      "name": "1337",
-      "id": "be3624aa-3e4d-48c6-8c5b-40fd0f99b327"
+      "name": "Hotel jasdasd",
+      "description": "I am described",
+      "image": "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg"
     }
   ],
-  "guesthouses": [
-    {
-      "name": "Guesthouse 1"
+  "sightseeing": [{
+      "name": "Name 1"
     },
     {
-      "name": "Guesthouse 2"
+      "name": "Name 2",
+      "value": "Edited value"
     },
     {
-      "name": "Guesthouse 3"
+      "name": "Name 3"
     },
     {
-      "name": "Guesthouse 4"
+      "name": "Name 4"
     },
     {
-      "name": "Guesthouse 5"
+      "name": "Name 5",
+      "value": "Edited value",
+      "smth": "More editions"
     },
     {
-      "name": "Guesthouse 6"
+      "name": "Name 6"
+    },
+    {
+      "name": "Name 7"
+    },
+    {
+      "name": "Name 8"
+    },
+    {
+      "name": "Name 9"
+    },
+    {
+      "name": "Name 10"
+    },
+    {
+      "name": "Name 11"
+    },
+    {
+      "name": "Name 12"
+    },
+    {
+      "name": "Name 13"
+    },
+    {
+      "name": "Name 14"
+    },
+    {
+      "name": "Name 15"
+    },
+    {
+      "name": "Name 16",
+      "id": "19457a3d-d667-4413-a220-1af85099345a"
+    }
+  ],
+  "restaurants": [{
+      "name": "Restaurant 1",
+      "menu": [
+        "Dish 1",
+        "Dish 2"
+      ]
+    },
+    {
+      "name": "Restaurant 2"
+    },
+    {
+      "name": "Restaurant 3"
+    },
+    {
+      "name": "Restaurant 4"
+    },
+    {
+      "name": "Restaurant 5"
+    },
+    {
+      "name": "Restaurant 6"
+    },
+    {
+      "name": "Restaurant 7"
+    },
+    {
+      "name": "Restaurant 8"
+    },
+    {
+      "name": "Restaurant 9"
+    },
+    {
+      "name": "Restaurant 10"
+    },
+    {
+      "name": "Restaurant 11"
+    },
+    {
+      "name": "Restaurant 12"
+    },
+    {
+      "name": "Restaurant 13"
+    },
+    {
+      "name": "Restaurant 14"
+    },
+    {
+      "name": "Restaurant 15"
+    },
+    {
+      "name": "Restaurant 16"
+    },
+    {
+      "name": "Restaurant 17"
+    },
+    {
+      "name": "Some restaurant",
+      "id": "2666bf1c-52f4-4d70-8aab-a6c6a600bc77"
     }
   ]
 }

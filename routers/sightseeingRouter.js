@@ -4,106 +4,106 @@ var express = require('express');
 
 module.exports = function (db) {
     var router = express.Router();
-    var DEFAULT_PAGE_SIZE = 5;
+    const DEFAULT_PAGE_SIZE = 5;
 
-    // Get all hotels
+    // Get all sightseeing objects
     router.get('/', function (req, res) {
-        // Get all hotels sorted alphabetically
-        const resultHotels = db.get('hotels')
+        // Get all sightseeing objects sorted alphabetically
+        const sightseeings = db.get('sightseeing')
             .chain()
             .sortBy('name')
             .value();
 
-        res.json(resultHotels);
+        res.json(sightseeings);
     });
 
-    // Get hotels by page
+    // Get paged
     router.get('/:pageNumber', function (req, res) {
         const pageSize = DEFAULT_PAGE_SIZE || req.pageSize;
         const pageNumber = req.params.pageNumber;
-        const hotelsDB = db.get('hotels');
+        const sightseeingDB = db.get('sightseeing');
+
         // Page content would exceed the number of items
-        if (pageSize * pageNumber - pageSize >= hotelsDB.size()) {
+        if (pageSize * pageNumber - pageSize >= sightseeingDB.size()) {
             res.status(400)
-                .json("No hotels on this page");
+                .json("No sightseeing objects on this page");
             return;
         }
 
         const startingIndex = pageNumber * pageSize - pageSize;
         const endingIndex = pageNumber * pageSize;
 
-        const pagesCount = Math.ceil(hotelsDB.value().length / pageSize);
+        const pagesCount = Math.ceil(sightseeingDB.value().length / pageSize);
         const pages = [];
         for(let i = 0; i < pagesCount; i += 1) {
             pages.push(i + 1);
         }
 
-
         // Sort hotels by name and get by indices based on page selected
-        const resultHotels = hotelsDB.chain()
+        const resultObjects = sightseeingDB.chain()
             .sortBy('name')
             .slice(startingIndex, endingIndex)
             .value();
 
         res.json({
-            hotels: resultHotels,
+            sightseeing:resultObjects,
             pages: pages
         });
     });
 
-    // Add new hotel
+    // Add new object
     router.post('/', function (req, res) {
-        const hotelToAdd = req.body;
+        const objectToAdd = req.body;
 
-        const duplicatingHotel = db.get('hotels')
-            .find({name: hotelToAdd.name});
+        const duplicatedObject = db.get('sightseeing')
+            .find({name: objectToAdd.name});
 
-        if (duplicatingHotel.value()) {
+        if (duplicatedObject.value()) {
             res.status(400)
-                .json("Hotel with such name already exists");
+                .json("Sightseeing object with such name already exists");
             return;
         }
 
-        db.get('hotels')
-            .insert(hotelToAdd)
+        db.get('sightseeing')
+            .insert(objectToAdd)
             .write();
 
         res.json("Succesfully added!");
     });
 
-    // Get specific hotel
+    // Get specific sightseeing object
     router.put('/', function(req, res) {
         // Add logic for additional params (price, etc)
-        const searchedHotelName = req.body.name;
+        const searchedObjectName = req.body.name;
 
-        const foundHotel = db.get('hotels')
-            .find({name: searchedHotelName})
+        const foundObject = db.get('sightseeing')
+            .find({name: searchedObjectName})
             .value();
 
-        if(!foundHotel) {
+        if(!foundObject) {
             res.status(400)
-                .json("Hotel with such parameters(name) doesnt exist");
+                .json("Sightseeing object with such parameters(name) doesnt exist");
                 return;
         }
 
-        res.json(foundHotel);
+        res.json(foundObject);
     });
 
-    // Edit hotel properties
+    // Edit sightseeing object properties
     router.patch('/', function(req, res) {
-        const searchedHotel = req.body;
+        const searchedObject = req.body;
         console.log(req.body);
 
-        const foundHotel = db.get('hotels')
-            .find({name: searchedHotel.name});
+        const foundObject = db.get('sightseeing')
+            .find({name: searchedObject.name});
 
-        if(!foundHotel.value()) {
+        if(!foundObject.value()) {
             res.status(400)
-                .json("No hotel with that name found");
+                .json("No sightseeing object with that name found");
             return;
         }
 
-        foundHotel.assign(searchedHotel).write();
+        foundObject.assign(searchedObject).write();
         res.json("Successfully edited.");
     });
 

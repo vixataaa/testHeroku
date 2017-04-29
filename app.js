@@ -1,5 +1,7 @@
 // !!!!! TODO !!!!!!
 // fix consistency in variable declarations (var, let, const)
+// TODO: fix routers code quality
+
 
 var express = require('express');
 var low = require('lowdb');
@@ -19,6 +21,15 @@ app.use(bodyParser.json());
 // Routers
 var hotelsRouter = require(__dirname + '/routers/hotelsRouter')(db);
 app.use('/hotels', hotelsRouter);
+
+var sightseeingRouter = require(__dirname + '/routers/sightseeingRouter')(db);
+app.use('/sightseeing', sightseeingRouter);
+
+var restaurantsRouter = require(__dirname + '/routers/restaurantsRouter')(db);
+app.use('/restaurants', restaurantsRouter);
+
+var objectsRouter = require(__dirname + '/routers/objectsRouter')(db);
+app.use('/objects', objectsRouter);
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
