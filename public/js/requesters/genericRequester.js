@@ -1,12 +1,12 @@
 import 'jquery';
 
-const requester = function() {
+const genericRequester = function() {
     function get(url, body) {
         const promise = new Promise((resolve, reject) => {
             $.ajax({
                 type: 'GET',
                 url: url,
-                data: body,
+                data: JSON.stringify(body),
                 contentType: 'application/json',
                 success: (data) => resolve(data),
                 error: (data) => reject(data)
@@ -21,7 +21,7 @@ const requester = function() {
             $.ajax({
                 type: 'POST',
                 url: url,
-                data: body,
+                data: JSON.stringify(body),
                 contentType: 'application/json',
                 success: (data) => resolve(data),
                 error: (data) => reject(data)
@@ -36,7 +36,7 @@ const requester = function() {
             $.ajax({
                 type: 'PUT',
                 url: url,
-                data: body,
+                data: JSON.stringify(body),
                 contentType: 'application/json',
                 success: (data) => resolve(data),
                 error: (data) => reject(data)
@@ -51,7 +51,7 @@ const requester = function() {
             $.ajax({
                 type: 'PATCH',
                 url: url,
-                data: body,
+                data: JSON.stringify(body),
                 contentType: 'application/json',
                 success: (data) => resolve(data),
                 error: (data) => reject(data)
@@ -62,11 +62,11 @@ const requester = function() {
     }
 
     return {
-        get,
-        post,
-        put,
-        patch
+        get: get,
+        post: post,
+        put: put,
+        patch: patch
     };
 };
 
-export { requester };
+export { genericRequester };
