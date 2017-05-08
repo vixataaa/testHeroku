@@ -2,15 +2,15 @@ import 'jquery';
 import Handlebars from 'handlebars';
 
 // Consider implementing a class
-const hotelDetailsController = function(objectsRequester, templateLoader) {
+const userProfileController = function(genericRequester, templateLoader) {
     // Add validations if provider is null
-    const objRequester = objectsRequester;
+    const requester = genericRequester;
     const loader = templateLoader;
 
-    function displayContent(directory, hotelName, templateName, containerSelector) {
+    function displayContent(directory, userName, templateName, containerSelector) {
         Promise.all([
             loader.loadTemplate(templateName),
-            objRequester.getSpecificObject(directory, hotelName)
+            requester.get(directory + '/' + userName)
         ])
         .then(([template, data]) => {
             $(containerSelector).html(template(data));
@@ -22,4 +22,4 @@ const hotelDetailsController = function(objectsRequester, templateLoader) {
     };
 };
 
-export { hotelDetailsController };
+export { userProfileController };

@@ -39,7 +39,6 @@ module.exports = function (db) {
             pages.push(i + 1);
         }
 
-        // Sort hotels by name and get by indices based on page selected
         const resultObjects = sightseeingDB.chain()
             .sortBy('name')
             .slice(startingIndex, endingIndex)
@@ -54,6 +53,7 @@ module.exports = function (db) {
     // Add new object
     router.post('/', function (req, res) {
         const objectToAdd = req.body;
+        objectToAdd.type = 'sightseeing';
 
         const duplicatedObject = db.get('sightseeing')
             .find({name: objectToAdd.name});
@@ -64,6 +64,17 @@ module.exports = function (db) {
             return;
         }
 
+        const addingUser = db.get('users')
+            .find({username: objectToAdd.addedBy});
+
+        const adderItems = addingUser.value().added || [];
+        adderItems.push({
+            name: objectToAdd.name,            
+        });
+
+        addingUser.assign({added: adderItems})
+            .write();
+
         db.get('sightseeing')
             .insert(objectToAdd)
             .write();
@@ -73,11 +84,20 @@ module.exports = function (db) {
 
     // Get specific sightseeing object
     router.put('/', function(req, res) {
-        // Add logic for additional params (price, etc)
-        const searchedObjectName = req.body.name;
+        let searchParam = {};
+        if(req.body.id) {
+            searchParam = {
+                id: req.body.id
+            };
+        }
+        else if(req.body.name) {
+            searchParam = {
+                name: req.body.name
+            };
+        }
 
         const foundObject = db.get('sightseeing')
-            .find({name: searchedObjectName})
+            .find(searchParam)
             .value();
 
         if(!foundObject) {
@@ -89,22 +109,38 @@ module.exports = function (db) {
         res.json(foundObject);
     });
 
-    // Edit sightseeing object properties
+    // Add comment/edit
     router.patch('/', function(req, res) {
-        const searchedObject = req.body;
-        console.log(req.body);
+        const searchedSightId = req.body.id;
 
-        const foundObject = db.get('sightseeing')
-            .find({name: searchedObject.name});
+        const foundSight = db.get('sightseeing')
+            .find({id: searchedSightId});
 
-        if(!foundObject.value()) {
+        if(!foundSight.value()) {
             res.status(400)
-                .json("No sightseeing object with that name found");
+                .json("No sightseeing object with that ID found.");
             return;
         }
 
-        foundObject.assign(searchedObject).write();
-        res.json("Successfully edited.");
+        // Editing
+        if(!req.body.comment && !req.body.author) {
+            foundSight.assign(req.body)
+                .write();
+            res.json("Sightseeing object edited.");
+            return;
+        }
+
+        // Adding comment
+        const currentComments = foundSight.value().comments || [];
+        currentComments.push({
+            author: req.body.author,
+            text: req.body.text
+        });
+
+        foundSight.assign({comments: currentComments})
+            .write();
+
+        res.json("Comment added.");
     });
 
     return router;

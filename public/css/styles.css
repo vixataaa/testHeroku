@@ -17,8 +17,16 @@ ul.dropdown-lr {
 }*/
 
 #myLogo {
-    max-width:100px;
+    max-width: 100px;
     margin-top: -15px;
+}
+
+#user-dropdown-text {
+    font-size: 17px;
+    font-weight: bold;
+}
+#profile-dropdown {
+    display: none;
 }
 
 .navbar-custom {
@@ -75,3 +83,4 @@ ul.dropdown-lr {
 #remember-me-text{
     color: #1B3C34;
 }
+

@@ -1,9 +1,140 @@
 {
   "hotels": [
     {
+      "type": "hotel",
       "name": "Hotel1",
-      "description": "I am described",
-      "image": "/imgs/sample-hotel.jpg"
+      "description": "Here we have a detailed hotel description",
+      "phone": "0035912345678",
+      "e-mail": "samplemail@gmail.com",
+      "address": "86 Pine St., Seattle, WA 98101-1571",
+      "imageOne": "http://placehold.it/750x500",
+      "imageTwo": "http://placehold.it/500x300",
+      "imageThree": "http://placehold.it/500x300",
+      "imageFour": "http://placehold.it/500x300",
+      "imageFive": "http://placehold.it/500x300",
+      "comments": [
+        {
+          "author": "someone",
+          "text": "comm text"
+        },
+        {
+          "author": "az",
+          "text": "some comment text"
+        },
+        {
+          "author": "az",
+          "text": "some comment text2"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "az",
+          "text": "some comment text3"
+        },
+        {
+          "author": "someUser1",
+          "text": "This place rocks"
+        },
+        {
+          "author": "someUser1",
+          "text": "wow very comment"
+        },
+        {
+          "author": "someUser1",
+          "text": "some commentasdasd"
+        },
+        {
+          "author": "someUser1",
+          "text": "123456789"
+        },
+        {
+          "author": "someUser1",
+          "text": "asd fgh"
+        },
+        {
+          "author": "someUser1",
+          "text": "kek"
+        }
+      ],
+      "id": "555-555"
     },
     {
       "name": "Hotel 2",
@@ -74,11 +205,46 @@
       "name": "Hotel jasdasd",
       "description": "I am described",
       "image": "https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg"
+    },
+    {
+      "name": "Random hotel",
+      "description": "random description",
+      "phone": "+696969",
+      "address": "Dat Adress",
+      "e-mail": "oshit@waddup.com",
+      "imageOne": "https://i.ytimg.com/vi/pCOb6Fykxz0/maxresdefault.jpg",
+      "imageTwo": "https://19818-presscdn-pagely.netdna-ssl.com/wp-content/uploads/55e/7e/27c6763f50c85c840ff213f96f94458b.jpg",
+      "imageThree": "http://a3.mzstatic.com/us/r30/Purple20/v4/90/99/e3/9099e34c-471f-dd73-c574-abce61c0db29/screen520x924.jpeg",
+      "imageFour": "http://a3.mzstatic.com/us/r30/Purple20/v4/90/99/e3/9099e34c-471f-dd73-c574-abce61c0db29/screen520x924.jpeg",
+      "imageFive": "http://a3.mzstatic.com/us/r30/Purple20/v4/90/99/e3/9099e34c-471f-dd73-c574-abce61c0db29/screen520x924.jpeg",
+      "addedBy": "someUser1",
+      "id": "bcc2c975-46f6-4327-837f-5ab5fb6526b7"
+    },
+    {
+      "name": "asdasd",
+      "description": "asfasfasf",
+      "phone": "asfasfasf",
+      "address": "asfasfasf",
+      "e-mail": "asdasd@asd.scom",
+      "imageOne": "asd",
+      "imageTwo": "123",
+      "imageThree": "444",
+      "imageFour": "555",
+      "imageFive": "666",
+      "addedBy": "someUser1",
+      "id": "808dfcd2-ec2c-4423-9a69-8f1c17bf39f0"
     }
   ],
   "sightseeing": [
     {
-      "name": "Name 1"
+      "name": "Name1",
+      "description": "A description of the specific sightseeing",
+      "imageOne": "https://d1bvpoagx8hqbg.cloudfront.net/originals/park-guell-1238112da26d11a82e673fe0da34078e.jpg",
+      "imageTwo": "https://d1bvpoagx8hqbg.cloudfront.net/originals/park-guell-1238112da26d11a82e673fe0da34078e.jpg",
+      "imageThree": "https://d1bvpoagx8hqbg.cloudfront.net/originals/park-guell-1238112da26d11a82e673fe0da34078e.jpg",
+      "imageFour": "https://d1bvpoagx8hqbg.cloudfront.net/originals/park-guell-1238112da26d11a82e673fe0da34078e.jpg",
+      "imageFive": "https://d1bvpoagx8hqbg.cloudfront.net/originals/park-guell-1238112da26d11a82e673fe0da34078e.jpg",
+      "address": "13, Downing Street"
     },
     {
       "name": "Name 2",
@@ -126,28 +292,143 @@
       "name": "Name 15"
     },
     {
+      "type": "sightseeing",
       "name": "Name 16",
-      "id": "19457a3d-d667-4413-a220-1af85099345a"
+      "id": "19457a3d-d667-4413-a220-1af85099345a",
+      "comments": [
+        {
+          "author": "someUser1",
+          "text": "1234"
+        },
+        {
+          "author": "someUser1",
+          "text": "pogChamp"
+        },
+        {
+          "author": "someUser1",
+          "text": "asdf"
+        }
+      ]
+    },
+    {
+      "name": "Sightseeeeee",
+      "description": "WOW",
+      "phone": "84654654",
+      "address": "Gorno nanadolnishte",
+      "e-mail": "asd@asdINC.com",
+      "imageOne": "http://placehold.it/750x500",
+      "imageTwo": "http://placehold.it/750x500",
+      "imageThree": "http://placehold.it/750x500",
+      "imageFour": "http://placehold.it/750x500",
+      "imageFive": "http://placehold.it/750x500",
+      "addedBy": "someUser1",
+      "id": "ebee108d-ecb6-46e4-8115-2286ca2212ff"
+    },
+    {
+      "name": "LOLOLO",
+      "description": "LOLOLO",
+      "phone": "LOLOLO",
+      "address": "LOLOLO",
+      "e-mail": "LOLOLO",
+      "imageOne": "LOLOLO",
+      "imageTwo": "LOLOLO",
+      "imageThree": "LOLOLO",
+      "imageFour": "LOLOLO",
+      "imageFive": "LOLOLO",
+      "addedBy": "someUser1",
+      "id": "f30896cc-a5a4-48b2-bb3c-9c838a54eb8c"
+    },
+    {
+      "name": "LOLOLO1",
+      "description": "LOLOLO",
+      "phone": "LOLOLO",
+      "address": "LOLOLO",
+      "e-mail": "LOLOLO",
+      "imageOne": "LOLOLO",
+      "imageTwo": "LOLOLO",
+      "imageThree": "LOLOLO",
+      "imageFour": "LOLOLO",
+      "imageFive": "LOLOLO",
+      "addedBy": "someUser1",
+      "type": "sightseeing",
+      "id": "015ada1e-5c91-4758-8c17-bf2fad69828b",
+      "comments": [
+        {
+          "author": "someUser1",
+          "text": "1234"
+        }
+      ]
+    },
+    {
+      "name": "AAAA",
+      "description": "Some description be written here",
+      "phone": "8778797987",
+      "address": "some street",
+      "e-mail": "email@abv.bg",
+      "imageOne": "https://images4.sw-cdn.net/product/picture/710x528_7480816_1496035_1459325206.jpg",
+      "imageTwo": "https://images4.sw-cdn.net/product/picture/710x528_7480816_1496035_1459325206.jpg",
+      "imageThree": "https://images4.sw-cdn.net/product/picture/710x528_7480816_1496035_1459325206.jpg",
+      "imageFour": "https://images4.sw-cdn.net/product/picture/710x528_7480816_1496035_1459325206.jpg",
+      "imageFive": "https://images4.sw-cdn.net/product/picture/710x528_7480816_1496035_1459325206.jpg",
+      "addedBy": "someUser1",
+      "type": "sightseeing",
+      "id": "5305f697-553a-4c77-9b64-71def11a9dd3",
+      "comments": [
+        {
+          "author": "someUser1",
+          "text": "asdfg"
+        },
+        {
+          "author": "someUser1",
+          "text": "asd.klajsdlk;ajsdl;kjasd;lk"
+        }
+      ]
     }
   ],
   "restaurants": [
     {
-      "name": "Restaurant 1",
+      "type": "restaurant",
+      "name": "Restaurant1",
+      "phone": "0035912345678",
+      "address": "86 Pine St., Seattle, WA 98101-1571",
+      "e-mail": "some.email@gmail.com",
+      "description": "Some details about the menu and the food we serve.",
+      "imageOne": "https://www.scandichotels.com/imagevault/publishedmedia/qn6infvg30381stkubky/scandic-sundsvall-city-restaurant-verket-10.jpg",
+      "imageTwo": "https://www.scandichotels.com/imagevault/publishedmedia/qn6infvg30381stkubky/scandic-sundsvall-city-restaurant-verket-10.jpg",
+      "imageThree": "https://www.scandichotels.com/imagevault/publishedmedia/qn6infvg30381stkubky/scandic-sundsvall-city-restaurant-verket-10.jpg",
+      "imageFour": "https://www.scandichotels.com/imagevault/publishedmedia/qn6infvg30381stkubky/scandic-sundsvall-city-restaurant-verket-10.jpg",
+      "imageFive": "https://www.scandichotels.com/imagevault/publishedmedia/qn6infvg30381stkubky/scandic-sundsvall-city-restaurant-verket-10.jpg",
       "menu": [
         "Dish 1",
         "Dish 2"
+      ],
+      "id": "1-2"
+    },
+    {
+      "type": "restaurant",
+      "name": "Restaurant2",
+      "id": "123-456",
+      "comments": [
+        {
+          "author": "someUser1",
+          "text": "ss"
+        },
+        {
+          "author": "someUser1",
+          "text": "5345345"
+        }
       ]
     },
     {
-      "name": "Restaurant 2"
+      "type": "restaurant",
+      "name": "Restaurant3"
     },
     {
-      "name": "Restaurant 3"
-    },
-    {
+      "type": "restaurant",
       "name": "Restaurant 4"
     },
     {
+      "type": "restaurant",
       "name": "Restaurant 5"
     },
     {
@@ -187,13 +468,43 @@
       "name": "Restaurant 17"
     },
     {
+      "type": "restaurant",
       "name": "Some restaurant",
-      "id": "2666bf1c-52f4-4d70-8aab-a6c6a600bc77"
+      "id": "2666bf1c-52f4-4d70-8aab-a6c6a600bc77",
+      "comments": [
+        {
+          "author": "someUser1",
+          "text": "wow"
+        },
+        {
+          "author": "someUser1",
+          "text": "more wow"
+        },
+        {
+          "author": "someUser1",
+          "text": "kappa"
+        }
+      ]
+    },
+    {
+      "name": "Resto123",
+      "description": "Classy af",
+      "phone": "+359 1337",
+      "address": "Middle of nowhere",
+      "e-mail": "plsCome@gmail.com",
+      "imageOne": "https://www.scandichotels.com/imagevault/publishedmedia/qn6infvg30381stkubky/scandic-sundsvall-city-restaurant-verket-10.jpg",
+      "imageTwo": "https://www.scandichotels.com/imagevault/publishedmedia/qn6infvg30381stkubky/scandic-sundsvall-city-restaurant-verket-10.jpg",
+      "imageThree": "https://www.scandichotels.com/imagevault/publishedmedia/qn6infvg30381stkubky/scandic-sundsvall-city-restaurant-verket-10.jpg",
+      "imageFour": "https://www.scandichotels.com/imagevault/publishedmedia/qn6infvg30381stkubky/scandic-sundsvall-city-restaurant-verket-10.jpg",
+      "imageFive": "https://www.scandichotels.com/imagevault/publishedmedia/qn6infvg30381stkubky/scandic-sundsvall-city-restaurant-verket-10.jpg",
+      "addedBy": "someUser1",
+      "id": "a507f762-f9d1-43c5-a456-fa46d4534a9a"
     }
   ],
   "users": [
     {
       "username": "User1",
+      "emailAddress": "sampleEmail@gmail.com",
       "passHash": "HashedUser1password1",
       "id": "0b6a40a0-1e26-45b9-b07f-0056f73f7dea"
     },
@@ -603,6 +914,60 @@
       "secretQuestion": "vypros",
       "secretAnswer": "otgovor",
       "id": "9ee24466-9fd0-474b-87a9-66ca2a85a6ea"
+    },
+    {
+      "username": "testeTest",
+      "emailAddress": "noemail@gmail.com",
+      "passHash": "hashed123testeTest",
+      "secretQuestion": "Favorite food",
+      "secretAnswer": "none",
+      "id": "5386cd34-5d45-4338-a9f9-41f7df16964a"
+    },
+    {
+      "username": "vladi",
+      "emailAddress": "vladi@abv.bg",
+      "passHash": "40bd001563085fc35165329ea1ff5c5ecbdbbeef",
+      "secretQuestion": "123",
+      "secretAnswer": "123",
+      "id": "8050251b-33d2-484b-82a9-d5b6b089c6aa"
+    },
+    {
+      "username": "testUser1",
+      "emailAddress": "asd@asd.com",
+      "passHash": "83592796bc17705662dc9a750c8b6d0a4fd93396",
+      "secretQuestion": "vypros",
+      "secretAnswer": "otgovor",
+      "id": "d4493a7b-9388-4850-8a53-ff27cd647333"
+    },
+    {
+      "username": "someUser1",
+      "emailAddress": "asd@asd.com",
+      "passHash": "83592796bc17705662dc9a750c8b6d0a4fd93396",
+      "secretQuestion": "vypros",
+      "secretAnswer": "otgovor",
+      "id": "7c605cda-9b50-4e6d-adf6-ae12eac4b0b8",
+      "added": [
+        {
+          "name": "asdasd"
+        },
+        {
+          "name": "LOLOLO"
+        },
+        {
+          "name": "LOLOLO1"
+        },
+        {
+          "name": "AAAA"
+        }
+      ]
+    },
+    {
+      "username": "Milena",
+      "emailAddress": "milena@gmail.com",
+      "passHash": "7c4a8d09ca3762af61e59520943dc26494f8941b",
+      "secretQuestion": "bla?",
+      "secretAnswer": "bla",
+      "id": "12d5b02c-ac1d-4981-8e39-8bf2a5ed4de3"
     }
   ]
 }

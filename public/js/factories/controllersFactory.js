@@ -3,9 +3,11 @@ import { objectsRequester } from 'objectsRequester';
 import { userRequester } from 'userRequester';
 import { templateLoader } from 'templateLoader';
 import { userValidator } from 'userValidator';
-import { hotelDetailsController } from 'hotelDetailsController';
+import { detailsPageController } from 'detailsPageController'; 
 import { objectPagesController } from 'objectPagesController';
 import { userController } from 'userController';
+import { userProfileController } from 'userProfileController';
+import { addItemController } from 'addItemController';
 
 const controllersFactory = function() {
     // Extracted here in case we decide to extract dependancies here too
@@ -15,8 +17,8 @@ const controllersFactory = function() {
     const loader = templateLoader(requester);
     const usrValidator = userValidator();
 
-    function createHotelDetailsController() {
-        return hotelDetailsController(objRequester, loader);
+    function createDetailsPageController() {
+        return detailsPageController(objRequester, loader);
     }
 
     function createObjectsPagesController() {
@@ -27,11 +29,23 @@ const controllersFactory = function() {
         return userController(usrRequester, usrValidator);
     }
 
+    function createUserProfileController() {
+        return userProfileController(requester, loader);
+    }
+
+    function createAddItemController() {
+        return addItemController(objRequester, loader);
+    }
+
     return {
-        createHotelDetailsController: createHotelDetailsController,
         createObjectsPagesController: createObjectsPagesController,
-        createUserController: createUserController
+        createUserController: createUserController,
+        createDetailsPageController: createDetailsPageController,
+        createUserProfileController: createUserProfileController,
+        createAddItemController: createAddItemController
     };
 };
 
 export { controllersFactory };
+
+// Orig

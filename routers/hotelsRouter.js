@@ -54,6 +54,7 @@ module.exports = function (db) {
     // Add new hotel
     router.post('/', function (req, res) {
         const hotelToAdd = req.body;
+        hotelToAdd.type = 'hotel';
 
         const duplicatingHotel = db.get('hotels')
             .find({name: hotelToAdd.name});
@@ -64,47 +65,84 @@ module.exports = function (db) {
             return;
         }
 
+        const addingUser = db.get('users')
+            .find({username: hotelToAdd.addedBy});
+
+        const adderItems = addingUser.value().added || [];
+        adderItems.push({
+            name: hotelToAdd.name,            
+        });
+
+        addingUser.assign({added: adderItems})
+            .write();
+
         db.get('hotels')
             .insert(hotelToAdd)
             .write();
 
-        res.json("Succesfully added!");
+        res.json("Successfully added!");
     });
 
     // Get specific hotel
     router.put('/', function(req, res) {
         // Add logic for additional params (price, etc)
-        const searchedHotelName = req.body.name;
+        let searchParam = {};
+        if(req.body.id) {
+            searchParam = {
+                id: req.body.id
+            };
+        }
+        else if(req.body.name) {
+            searchParam = {
+                name: req.body.name
+            };
+        }
 
         const foundHotel = db.get('hotels')
-            .find({name: searchedHotelName})
+            .find(searchParam)
             .value();
 
         if(!foundHotel) {
             res.status(400)
-                .json("Hotel with such parameters(name) doesnt exist");
+                .json("Hotel with such parameters(name) doesn't exist");
                 return;
         }
 
         res.json(foundHotel);
     });
 
-    // Edit hotel properties
+    // Add comment/edit
     router.patch('/', function(req, res) {
-        const searchedHotel = req.body;
-        console.log(req.body);
+        const searchedHotelId = req.body.id;
 
         const foundHotel = db.get('hotels')
-            .find({name: searchedHotel.name});
+            .find({id: searchedHotelId});
 
         if(!foundHotel.value()) {
             res.status(400)
-                .json("No hotel with that name found");
+                .json("No hotel with that ID found.");
             return;
         }
 
-        foundHotel.assign(searchedHotel).write();
-        res.json("Successfully edited.");
+        // Editing
+        if(!req.body.comment && !req.body.author) {
+            foundHotel.assign(req.body)
+                .write();
+            res.json("Hotel edited.");
+            return;
+        }
+
+        // Adding comment
+        const currentComments = foundHotel.value().comments || [];
+        currentComments.push({
+            author: req.body.author,
+            text: req.body.text
+        });
+
+        foundHotel.assign({comments: currentComments})
+            .write();
+
+        res.json("Comment added.");
     });
 
     return router;

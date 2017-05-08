@@ -39,7 +39,6 @@ module.exports = function (db) {
             pages.push(i + 1);
         }
 
-        // Sort hotels by name and get by indices based on page selected
         const resultRestaurants = restaurantsDB.chain()
             .sortBy('name')
             .slice(startingIndex, endingIndex)
@@ -54,6 +53,7 @@ module.exports = function (db) {
     // Add new restaurant
     router.post('/', function (req, res) {
         const restaurantToAdd = req.body;
+        restaurantToAdd.type = 'restaurant';
 
         const duplicatedRestaurant = db.get('restaurants')
             .find({name: restaurantToAdd.name});
@@ -64,6 +64,17 @@ module.exports = function (db) {
             return;
         }
 
+        const addingUser = db.get('users')
+            .find({username: restaurantToAdd.addedBy});
+
+        const adderItems = addingUser.value().added || [];
+        adderItems.push({
+            name: restaurantToAdd.name,            
+        });
+
+        addingUser.assign({added: adderItems})
+            .write();
+
         db.get('restaurants')
             .insert(restaurantToAdd)
             .write();
@@ -73,11 +84,22 @@ module.exports = function (db) {
 
     // Get specific restaurant object
     router.put('/', function(req, res) {
+        console.log(req.body);
         // Add logic for additional params (price, etc)
-        const searchedRestaurantName = req.body.name;
+        let searchParam = {};
+        if(req.body.id) {
+            searchParam = {
+                id: req.body.id
+            };
+        }
+        else if(req.body.name) {
+            searchParam = {
+                name: req.body.name
+            };
+        }
 
         const foundRestaurant = db.get('restaurants')
-            .find({name: searchedRestaurantName})
+            .find(searchParam)
             .value();
 
         if(!foundRestaurant) {
@@ -89,22 +111,38 @@ module.exports = function (db) {
         res.json(foundRestaurant);
     });
 
-    // Edit sightseeing object properties
+    // Add comment/edit
     router.patch('/', function(req, res) {
-        const searchedRestaurant = req.body;
-        console.log(req.body);
+        const searchedRestaurantId = req.body.id;
 
         const foundRestaurant = db.get('restaurants')
-            .find({name: searchedRestaurant.name});
+            .find({id: searchedRestaurantId});
 
         if(!foundRestaurant.value()) {
             res.status(400)
-                .json("No restaurant object with that name found");
+                .json("No restaurant with that ID found.");
             return;
         }
 
-        foundRestaurant.assign(searchedRestaurant).write();
-        res.json("Successfully edited.");
+        // Editing
+        if(!req.body.comment && !req.body.author) {
+            foundRestaurant.assign(req.body)
+                .write();
+            res.json("Restaurant edited.");
+            return;
+        }
+
+        // Adding comment
+        const currentComments = foundRestaurant.value().comments || [];
+        currentComments.push({
+            author: req.body.author,
+            text: req.body.text
+        });
+
+        foundRestaurant.assign({comments: currentComments})
+            .write();
+
+        res.json("Comment added.");
     });
 
     return router;
